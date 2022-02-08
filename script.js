@@ -1,19 +1,9 @@
-let boxTop = 200
-let boxLeft = 200
+let show = false;
 
-document.addEventListener('keydown', (event) => {
-    const keyName = event.key
-    console.log('keydown event\n\n' + 'key: ' + keyName)
-    if (keyName === 'ArrowDown') {
-        boxTop += 10
-    } else if (keyName === 'ArrowUp') {
-        boxTop -= 10
-    } else if (keyName === 'ArrowLeft') {
-        boxLeft -= 10
-    } else if (keyName === 'ArrowRight') {
-        boxLeft += 10
-    }
-    console.log(boxTop, boxLeft)
-    document.getElementById("box").style.top = boxTop + "px"
-    document.getElementById("box").style.left = boxLeft + "px"
-})
+let list = document.getElementById("list");
+
+function showHide(e){
+    console.log(e)
+    if(show){show = false; list.style.display = 'none'; e.innerHTML = "show";}
+    else{show = true; list.style.display = 'block' ; e.innerHTML = "hide";}
+}
